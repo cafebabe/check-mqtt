@@ -203,6 +203,7 @@ object CheckCommand "check-mqtt" {
     "-c" = "$mqtt_certfile$"
     "-k" = "$mqtt_keyfile$"
     "-t" = "$mqtt_topic$"
+    "-s" = "$mqtt_subscription$"
     "-m" = {
       set_if = "$mqtt_max$"
       value = "$mqtt_max$"
@@ -264,6 +265,7 @@ object Host "wemos1" {
   vars.mqtt_prefix = "devices/mydevice"
 
   vars.mqtt_topic = vars.mqtt_prefix + "/$$online"
+#  vars.mqtt_subscription = 
   vars.mqtt_payload = "true"
   vars.mqtt_value = "true"
   vars.mqtt_operator = "equal"
